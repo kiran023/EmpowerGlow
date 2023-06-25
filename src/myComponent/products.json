@@ -2,37 +2,45 @@
     {
         "id":"1",
         "img":"https://cdn.shopify.com/s/files/1/0055/7855/5503/files/Menstrualcupsizes_dd33a974-f626-4d2d-9ae0-c386c7a7ec0b_300x.jpg?v=1685698571",
+        "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name":"xyz",
         "productBrand":"peesafe",
         "category":"menstual cup",
-        "price":"1000"
+        "price":1000,
+        "rating":4.5
 
     },
     {
         "id":"2",
         "img":"https://cdn.shopify.com/s/files/1/0055/7855/5503/files/Menstrualcupsizes_00c1379d-ce94-480d-917a-17961f2d7761_300x.jpg?v=1685699286",
+        "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name":"sdf",
         "productBrand":"furr",
         "category":"menstual cup",
-        "price":"800"
+        "price":800,
+        "rating":4.5
 
     },
     {
         "id":"3",
         "img":"https://cdn.shopify.com/s/files/1/0055/7855/5503/products/ExtraSmallPrimary2_300x.png?v=1681293099",
+        "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name":"dads",
         "productBrand":"wisper",
         "category":"pads",
-        "price":"400"
+        "price":400,
+        "rating":4.5
 
     },
     {
         "id":"4",
         "img":"https://cdn.shopify.com/s/files/1/0055/7855/5503/files/504857466-7-copy_300x.jpg?v=1685426256",
+        "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name":"asf",
         "productBrand":"stayfree",
         "category":"pads",
-        "price":"200"
+        "price":200,
+        "rating":4.5
 
     }
 ]

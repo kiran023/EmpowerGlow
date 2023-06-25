@@ -8,9 +8,7 @@ import { setDoc, addDoc, collection, getDocs } from 'firebase/firestore';
 export const Productpage = () => {
     const localvariable = JSON.parse(localStorage.getItem("email"))
     const collectionRef = collection(database, localvariable)
-    // const [data, setdata] = useState([])
-    const [cartData, setcartData] = useState([])
-    const [wishlistData, setwishlistData] = useState([])
+    const [data, setdata] = useState([])
 
     useEffect(() => {
         async function fetchdata() {
@@ -20,37 +18,44 @@ export const Productpage = () => {
                     ...e.data(), id: e.id
                 }
             })
-            setcartData(arr.filter((e) => {
-                return e.type === "cart";
-            }))
-        
-            setwishlistData(arr.filter((e) => {
-                return e.type === "wishlist";
-            }))
+            setdata(arr)
         }
         fetchdata()
-    }, cartData)
+    }, [])
 
 
-    const addTocart = (e) => {
+    const addTo = (e,field) => {
 
-        let filterData=cartData.filter((eve)=>{
+        let filterData=data.filter((eve)=>{
             console.log(eve.product_id,e.product_id)
 
-            return eve.product_id===e.id
+            return ((eve.product_id===e.id) && (eve.type===field))
         })
         if(filterData.length===0) {
             addDoc(collectionRef, {
-                type: "cart",
+                type: field,
                 product_id: e.id,
                 img: e.img,
+                desc:e.desc,
                 name: e.name,
                 productBrand: e.productBrand,
                 category: e.category,
-                price: e.price
+                price: e.price,
+                qty:1
             })    
                 .then(() => {
-                    setcartData(cartData)
+                    const updatedCartData = [...data, {
+                        type: field,
+                        product_id: e.id,
+                        img: e.img,
+                        desc:e.desc,
+                        name: e.name,
+                        productBrand: e.productBrand,
+                        category: e.category,
+                        price: e.price,
+                        qty:1
+                    }];
+                    setdata(updatedCartData);
                     alert("data added")
 
                 })
@@ -59,15 +64,7 @@ export const Productpage = () => {
                 });
 
         }
-        else alert("no")
-
-
-       
-    }
-
-
-    const addToWishlist = () => {
-
+        else alert("no")  
     }
     const buyNow = () => {
 
@@ -100,9 +97,9 @@ export const Productpage = () => {
                                     <div>{e.name}</div>
                                     <div>{e.price}</div>
                                     <div style={{ display: 'flex', }}>
-                                        <div onClick={addToWishlist}> <ion-icon name="heart-outline"></ion-icon></div>
-                                        <div onClick={() => { addTocart(e) }}><ion-icon name="cart-outline"></ion-icon></div>
-                                        <div onClick={buyNow}>buy now</div>
+                                        <div onClick={()=>{addTo(e,"wishlist")}} style={{cursor:'pointer'}}> <ion-icon name="heart-outline"></ion-icon></div>
+                                        <div onClick={() => { addTo(e,"cart") }} style={{cursor:'pointer'}}><ion-icon name="cart-outline"></ion-icon></div>
+                                        <div onClick={buyNow} style={{cursor:'pointer'}}>buy now</div>
                                     </div>
                                 </div>
                             )
