@@ -108,16 +108,15 @@ export const Cart = () => {
                 <div  className='cart-subsec' key={e.product_id}>
                   <div className='cart-img'><img src={e.img} alt=""/></div>
                   <div className='cart-content' style={{ display: 'flex' , flexDirection:'column'}}>
-                    <div style={{ display: 'flex',justifyContent:"space-between"}}>
-                      <div>{e.name}</div>
-                      
+                    <div className='cart-info' style={{ display: 'flex',justifyContent:"space-between"}}>
+                      <div style={{fontWeight:'bold'}}>{e.name}</div>
                     </div>
-                    <div>{e.desc}</div>
-                    <div style={{ display: 'flex' }}>
-                      <div>{e.price}</div>
+                    <div className='cart-info'>{e.desc}</div>
+                    <div className='cart-info'style={{ display: 'flex', justifyContent:"space-between"}}>
+                      <div style={{fontWeight:'bold'}}>₹{e.price}</div>
                       <div>
                         <button style={{cursor:'pointer'}} onClick={()=>{decrement(e)}}>-</button>
-                        <span>{e.qty}</span>
+                        <span >{e.qty}</span>
                         <button style={{cursor:'pointer'}} onClick={()=>{increment(e)}}>+</button>
                       </div>
                     </div>
@@ -130,21 +129,33 @@ export const Cart = () => {
         </div>
         <div className='cart-checkout'>
           <div>
-            <h2>Price summary</h2>
-            <div style={{ display: 'flex' }}>
-              <div>Total price: </div>
+            <h3>Price summary</h3>
+            <div>
+            <div className='checkout-details'>
+              <div>Total MRP </div>
               <div>{price}</div>
             </div>
-            <div style={{ display: 'flex' }}>
-              <div>shipping: </div>
+            <div className='checkout-details'>
+              <div>Discount on MRP </div>
+              <div style={{color: "rgb(16, 209, 36)" }}>-2000</div>
+            </div>
+            <div className='checkout-details'>
+              <div>Coupon </div>
+              <div style={{color: "rgb(16, 209, 36)" }}>-200</div>
+            </div>
+            <div className='checkout-details'>
+              <div>Shipping </div>
               <div>100</div>
             </div>
-            <div style={{ display: 'flex' }}>
+            <div className='checkout-details' style={{borderTop:"solid 0.05px rgba(145, 144, 144, 0.283)"}}>
               <div>Grand total: </div>
-              <div>{price+100}</div>
+              <div>{price-100}</div>
             </div>
           </div>
-          <button>Place order</button>
+
+            </div>
+            
+          <button className='cart-btn'>Place Order</button>
 
 
         </div>

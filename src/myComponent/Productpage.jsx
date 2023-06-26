@@ -24,36 +24,38 @@ export const Productpage = () => {
     }, [])
 
 
-    const addTo = (e,field) => {
+    const addTo = (e, field) => {
 
-        let filterData=data.filter((eve)=>{
-            console.log(eve.product_id,e.product_id)
+        let filterData = data.filter((eve) => {
+            console.log(eve.product_id, e.product_id)
 
-            return ((eve.product_id===e.id) && (eve.type===field))
+            return ((eve.product_id === e.id) && (eve.type === field))
         })
-        if(filterData.length===0) {
+        if (filterData.length === 0) {
             addDoc(collectionRef, {
                 type: field,
                 product_id: e.id,
                 img: e.img,
-                desc:e.desc,
+                desc: e.desc,
                 name: e.name,
                 productBrand: e.productBrand,
                 category: e.category,
                 price: e.price,
-                qty:1
-            })    
+                qty: 1,
+                rating: e.rating
+            })
                 .then(() => {
                     const updatedCartData = [...data, {
                         type: field,
                         product_id: e.id,
                         img: e.img,
-                        desc:e.desc,
+                        desc: e.desc,
                         name: e.name,
                         productBrand: e.productBrand,
                         category: e.category,
                         price: e.price,
-                        qty:1
+                        qty: 1,
+                        rating: e.rating
                     }];
                     setdata(updatedCartData);
                     alert("data added")
@@ -64,7 +66,7 @@ export const Productpage = () => {
                 });
 
         }
-        else alert("no")  
+        else alert("no")
     }
     const buyNow = () => {
 
@@ -92,14 +94,18 @@ export const Productpage = () => {
                     {
                         Products.map((e) => {
                             return (
-                                <div>
-                                    <div><img src={e.img} alt="" /></div>
-                                    <div>{e.name}</div>
-                                    <div>{e.price}</div>
-                                    <div style={{ display: 'flex', }}>
-                                        <div onClick={()=>{addTo(e,"wishlist")}} style={{cursor:'pointer'}}> <ion-icon name="heart-outline"></ion-icon></div>
-                                        <div onClick={() => { addTo(e,"cart") }} style={{cursor:'pointer'}}><ion-icon name="cart-outline"></ion-icon></div>
-                                        <div onClick={buyNow} style={{cursor:'pointer'}}>buy now</div>
+                                <div className='pro-details'>
+                                    <div className='pro-img'><img src={e.img} alt="" /></div>
+                                    <div className='pro-text' style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                        <div >{e.name}</div>
+                                        <div className='pro-icon' onClick={() => { addTo(e, "wishlist") }} style={{ cursor: 'pointer' }}><ion-icon name="heart-outline"></ion-icon></div>
+                                    </div>
+                                    <div className='pro-text'>{e.desc}</div>
+                                    <div className='pro-text'> ₹{e.price}</div>
+
+                                    <div style={{ display: 'flex' }} className='pro-text'>
+                                        <div className='pro-icon' onClick={() => { addTo(e, "cart") }} style={{ cursor: 'pointer' }}><ion-icon name="bag-outline"></ion-icon></div>
+                                        <div onClick={buyNow} style={{ cursor: 'pointer' }} className='pro-btn'> <button >Buy Now</button> </div>
                                     </div>
                                 </div>
                             )

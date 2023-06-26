@@ -53,18 +53,26 @@ export const Signinpage = () => {
   return (
     <>
       <Navbar></Navbar>
-      <div>
-        <div>
+      <div className='form'>
+        <div className='form-item'>
           <h1>Login</h1>
-          <div>
-            <div>email <input type="email" onChange={(e) => { setemail(e.target.value) }} value={email} /></div>
-            <div> password<input type="password" onChange={(e) => { setpassword(e.target.value) }} value={password} /></div>
+          <div className='fill'>
+          <div>Email </div>
+          <input type="email" onChange={(e) => { setemail(e.target.value) }} value={email} />
           </div>
-          <div>Forgot Your password</div>
-          <button onClick={submit}>Signin</button>
+          <div className='fill'>
+          <div> Password</div>
+          <input type="password" onChange={(e) => { setpassword(e.target.value) }} value={password} />
+          </div>
+
+          {/* <div>Forgot Your password</div> */}
+          <button onClick={submit} className='submit-btn'>Signin</button>
           {/* <button onClick={googlesubmit}>sign in with google</button> */}
-          <div>don't have an account</div>
-          <Link to='/register'><div>create account</div></Link>
+          <div style={{display:"flex"}}>
+          <div>don't have an account ?</div>
+          <Link to='/register'><div className='alter'>create account</div></Link>
+          </div>
+          
         </div>
       </div>
       <Footer></Footer>
