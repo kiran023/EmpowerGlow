@@ -12,19 +12,18 @@ export const Createpage = () => {
   const [firstName, setfirstName] = useState('');
   const [lastName, setlastName] = useState('');
   const navigate = useNavigate()
+  const username=  JSON.parse(localStorage.getItem("name"))
+  const useremail=  JSON.parse(localStorage.getItem("email"))
   let auth = getAuth();
 
   const submit = () => {
+    
     createUserWithEmailAndPassword(auth, email, password)
       .then((response) => {
         console.log(response.user);
         localStorage.setItem("name", JSON.stringify(firstName));
         localStorage.setItem("email", JSON.stringify(email));
-        // setfirstName('')
-        // setlastName('')
-        // setemail('')
-        // setpassword('')
-        // setcheckpassword('')
+        alert("account have been created")
         navigate('/')
 
       })
@@ -35,9 +34,18 @@ export const Createpage = () => {
 
 
   }
+  const logout=()=>{
+    alert("Logout Successfully")
+    localStorage.clear();
+    navigate('/')
+
+  }
   return (
     <>
-      <Navbar></Navbar>
+    {
+      username===null ? 
+      <div>
+        <Navbar></Navbar>
       <div className='form'>
         <div className='form-item'>
           <h1>Create account</h1>
@@ -75,6 +83,26 @@ export const Createpage = () => {
 
       </div>
       <Footer></Footer>
+      </div>
+      
+      : 
+      <div>
+        <Navbar></Navbar>
+        <div className='form'>
+          <h2>hello!!! {username} </h2>
+          <h3>Email: {useremail}</h3>
+        
+        <div>
+          <Link to='/wishlist' ><button className='btn'>Go to your wishlist</button></Link>
+          <Link to='/cart' ><button className='btn'>Go to your cart</button></Link>
+        </div>
+        <button onClick={logout} className='submit-btn'> Log out</button>
+        </div>
+        
+        <Footer></Footer>
+      </div>
+    }
+      
     </>
 
   )

@@ -18,7 +18,7 @@ export const Navbar = ({props}) => {
           </ul>
         </div>
         <div className='nav-icon' >
-          <Link to='/search'><ion-icon name="search-outline"></ion-icon></Link>
+          <Link to='/allProducts'><ion-icon name="search-outline"></ion-icon></Link>
           <Link to='/wishlist'><ion-icon name="heart-outline"></ion-icon></Link>
           <Link to='/cart'><ion-icon name="cart-outline"  ></ion-icon></Link>
         <Link to='/register'><ion-icon name="person-outline" ></ion-icon></Link>

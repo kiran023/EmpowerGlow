@@ -24,6 +24,7 @@ export const Signinpage = () => {
       .then((response) => {
         console.log(response.user);
         localStorage.setItem("email",JSON.stringify(response.user.email));
+        localStorage.setItem("name",JSON.stringify(response.user.email.split('@')[0]))
         clearData();
         navigate('/')
 
@@ -33,23 +34,23 @@ export const Signinpage = () => {
       });
   }
 
-  // provider.setCustomParameters({
-  //   prompt: 'select_account'
-  // });
-  // const googlesubmit = () => {
-  //   signInWithPopup(auth, provider)
-  //     .then((response) => {
-  //       console.log(response.user);
-  //       console.log(response.user.displayName);
-  //       localStorage.setItem("name",JSON.stringify(response.user.displayName));
-  //       localStorage.setItem("email",JSON.stringify(response.user.email));
-  //       clearData();
-  //       navigate('/')
-  //     })
-  //     .catch((error) => {
-  //       alert(error.message);
-  //     });
-  // }
+  provider.setCustomParameters({
+    prompt: 'select_account'
+  });
+  const googlesubmit = () => {
+    signInWithPopup(auth, provider)
+      .then((response) => {
+        console.log(response.user);
+        console.log(response.user.displayName);
+        localStorage.setItem("name",JSON.stringify(response.user.displayName));
+        localStorage.setItem("email",JSON.stringify(response.user.email));
+        clearData();
+        navigate('/')
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  }
   return (
     <>
       <Navbar></Navbar>
@@ -67,7 +68,7 @@ export const Signinpage = () => {
 
           {/* <div>Forgot Your password</div> */}
           <button onClick={submit} className='submit-btn'>Signin</button>
-          {/* <button onClick={googlesubmit}>sign in with google</button> */}
+          <button onClick={googlesubmit} className='submit-btn'>Sign in with Google</button>
           <div style={{display:"flex"}}>
           <div>don't have an account ?</div>
           <Link to='/register'><div className='alter'>create account</div></Link>

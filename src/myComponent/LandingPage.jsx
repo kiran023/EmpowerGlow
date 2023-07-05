@@ -5,7 +5,7 @@ import landingImage from './landingImage.json'
 import { Navbar } from './navbar';
 import { Footer } from './Footer'
 import { Bycategory } from './Bycategory';
-import { Bybrand } from './Bybrand';
+import category from './category.json'
 
 export const LandingPage = () => {
   return (
@@ -38,7 +38,23 @@ export const LandingPage = () => {
           </div>
         </div>
 
-        <Bybrand></Bybrand>
+        <div style={{ margin: "40px" }}>
+          <h2 className='sub-head'>Explore by Brand</h2>
+          <Carousel >
+            {landingImage.map((e) => {
+              return(
+                <div>
+                <div><img src={e.url} alt="Image 1" key={e.id} /></div>
+                <div>{e.text}</div>
+              </div>
+
+              );
+             
+            })
+            }
+
+          </Carousel>
+          </div>
         <Footer></Footer>
 
       </div>
