@@ -3,14 +3,14 @@ import category from './category.json'
 
 export const Bycategory = () => {
   return (
-    <div>
-      <h2 className='sub-head'>Explore by Category</h2>
-      <div className='all-cat'>
+    <div className='sec-category'>
+      <h2 className='cat-heading'>Explore by Category</h2>
+      <div  className='cat-items'>
         {category.map((e) => {
           return (
-            <div className='cat-details'>
-              <div><img src={e.img} alt="" /></div>
-              <div>{e.text}</div>
+            <div  className='cat-box'>
+              <div className='cat-img'><img src={e.img} alt="" /></div>
+              <div className='cat-text'>{e.text}</div>
             </div>
           )
         })}

@@ -19,6 +19,11 @@ body{
 .carousel .thumbs{
   display: none;
 }
+.move img{
+ width: 1200px;
+ height: 450px;
+  
+}
 
 
 /* navbar */
@@ -28,14 +33,18 @@ a {
 }
 #logo{
   width: 200px;
-  margin: 10px;
+  margin: 20px;
 }
 .navbar{
   width: 100%;
   position: sticky;
   display: flex;
-  background-color: rgb(252, 222, 177);
+  background-color: rgb(89 125 146);
   justify-content: space-between;
+}
+.menu{
+  display: flex;
+  align-items: center;
 }
 .menu .list{
   display: flex;
@@ -43,6 +52,7 @@ a {
 }
 .list li{
   /* font-weight: bold; */
+  color: white;
   cursor: pointer;
   margin: 0px 30px;
 
@@ -52,31 +62,44 @@ a {
   /* justify-content: center; */
   align-items: center;
   margin-right: 50px !important;
+
   
 
 }
 .nav-icon ion-icon{
   margin: 0px 17px;
   font-size: 22px;
+  color: white;
 }
 
 /* aboutus */
-.aboutus{
-  margin: 30px;
+.sec-aboutus{
+  width: 90%;
+  margin: auto;
 }
-.about{
+.about-heading{
+  margin: 8% 3% 4% 3%;
+}
+.about-box{
   display: flex;
-  /* justify-content: space-evenly; */
-
-
+  margin: 0 0 10% 3%;
 }
 .about-img img {
-  width: 100%;
-}
-.about-text {
-  padding: 20px;
+  width: 500px;
   
 }
+.about-img  {
+  margin-right: 20px;
+  
+}
+.about-text {
+  padding: 0 20px;
+  font-size: 18px;
+  
+}
+
+
+
 
 
 /* footer */
@@ -120,19 +143,93 @@ cursor: pointer;
 
 
 /* category */
-.all-cat{
+.sec-category{
+  width: 90%;
+  margin: auto;
+}
+.cat-heading{
+  margin: 5% 3% 5% 3%;
+}
+.cat-img{
+  width: 200px;
+  height: 200px;
+  border-radius:50% ;
+
+}
+.cat-img img{
+  width: 100%;
+  height: 100%;
+  border-radius:50% ;
+
+}
+.cat-items{
   display: flex;
   justify-content: space-evenly;
 }
+.cat-text{
+  text-align: center;
+    margin: 15px;
 
-.sub-head{
-  margin-left:40px
 }
+
 .social-media ion-icon{
   font-size: 45px;
   margin-right: 30px;
-  
 }
+
+
+/* Brand */
+.sec-brand{
+  width: 95%;
+  margin: auto;
+}
+.brand-heading{
+  margin: 5% 3% 5% 3%;
+}
+.carousel-brand{
+  position: relative;
+}
+.container-brand img{
+ width: 375px;
+ height: 245px;
+ border-radius: 20px;
+}
+.container-brand {
+  margin-left: 20px ;
+}
+.all-container{
+   overflow-x:hidden ;
+   scroll-behavior: smooth;
+  display: flex;
+}
+
+.next-prev{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  top:40%;
+
+}
+.next,.prev{
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.605);
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+.next p, .prev p{
+  font-weight: bold;
+    /* font-size: 10px; */
+
+}
+.prev{
+  margin-left: 20px;
+}
+
+
 /* product page */
 .product-body{
   display: flex;
@@ -313,5 +410,8 @@ width: 150px;
   border-radius: 4px;
 
 }
+
+
+
 
 

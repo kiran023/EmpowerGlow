@@ -3,7 +3,7 @@ import React from 'react'
 
 export const Footer = () => {
     return (
-        <footer style={{ marginTop: "5%" }}>
+        <footer style={{ marginTop: "8%" }}>
             <div className='foot-sec1' style={{ display: "flex", padding: "5% 0% 3% 0%" }}>
                 <div className='foot-sub1'>
                     <h1>Since you're already here, lets take your hygiene up a notch.</h1>

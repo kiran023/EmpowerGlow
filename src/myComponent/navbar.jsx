@@ -1,5 +1,5 @@
 import React from 'react'
-import logoblack from '../logo/logo-no-background.png'
+import logo from '../logo/logo-no-background.png'
 import {Link} from 'react-router-dom';
 
 export const Navbar = ({props}) => {
@@ -8,7 +8,7 @@ export const Navbar = ({props}) => {
   return (
     <>
       <nav className='navbar' >
-        <Link to='/'><div> <img src={logoblack} alt=""  id='logo' /></div></Link>
+        <Link to='/'><div className='nav-img'> <img src={logo} id='logo' /></div></Link>
         <div className='menu'>
           <ul className='list'>
             <Link to='/allProducts'><li>Product</li></Link>
