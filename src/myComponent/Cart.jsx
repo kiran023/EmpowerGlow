@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Navbar } from './navbar';
 import { Footer } from './Footer';
-import { app, database } from '../firebase';
+import { database } from '../firebase';
 import { collection, getDocs, deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
@@ -50,7 +50,7 @@ export const Cart = () => {
       .then(() => {
         // alert("deleted")
         const deletedData = cartdata.filter((event) => {
-          return event.id != e.id
+          return event.id !== e.id
         })
         setcartdata(deletedData)
       })
@@ -173,7 +173,7 @@ export const Cart = () => {
 
           </div>
         </div>
-          : <div>cart is empty</div>
+          : <div className='empty'> <h1> Your Cart is empty</h1></div>
       }
 
       <Footer></Footer>

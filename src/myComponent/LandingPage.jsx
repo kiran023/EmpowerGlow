@@ -5,7 +5,6 @@ import landingImage from './landingImage.json'
 import { Navbar } from './navbar';
 import { Footer } from './Footer'
 import { Bycategory } from './Bycategory';
-import category from './category.json'
 
 export const LandingPage = () => {
   const images=[
@@ -40,51 +39,46 @@ export const LandingPage = () => {
 
   const scrollLeft = () => {
     let box = document.querySelector("#box-container");
-    // console.log(box);
-    let width = box.clientWidth;
-    console.log(width);
-
-    box.scrollLeft =  box.scrollLeft-400;
+    box.scrollLeft =  box.scrollLeft-340;
   };
  
   const scrollRight=()=>{
     let box = document.querySelector("#box-container");
-    let width = box.clientWidth;
-    box.scrollLeft =  box.scrollLeft+400;
+    // let width = box.clientWidth;
+    box.scrollLeft =  box.scrollLeft+340;
 
   }
   return (
-    <>
       <div>
         <Navbar></Navbar>
-
+        
         <div className="App">
           <Carousel className='move'>
             {landingImage.map((e) => {
-              return <div><img src={e.url} alt="Image 1" key={e.id} /></div>
+              return <div key={e.id}><img src={e.url} alt=""  /></div>
             })
             }
 
           </Carousel>
         </div>
-
+        <div className='main-body'>
         <Bycategory></Bycategory>
 
         <div className='sec-aboutus'>
-          <h2 className='about-heading'>Our Story</h2>
+          <h2 className='heading'>Our Story</h2>
           <div className='about-box'>
             <div className='about-img'>
               <img src="https://cdn.shopify.com/s/files/1/0055/7855/5503/files/Journey_banner-01_copy_-_Copy_2048x.jpg?v=1648016934" alt="" />
             </div>
             <div className='about-text'>
-              <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam at cumque iure tempora dolores soluta alias voluptas necessitatibus quis esse id molestias, maxime facere quam suscipit totam nisi excepturi itaque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, sapiente voluptatum? Repudiandae soluta nihil placeat dolore molestias deserunt ipsam culpa harum sit fugit suscipit nostrum minima, repellat eius tenetur assumenda.</div>
+              <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam at cumque iure tempora dolores soluta alias voluptas necessitatibus quis esse id molestias, maxime facere quam suscipit totam</div>
               <div style={{ textDecoration: " underline", cursor: "pointer" }} >know more...</div>
             </div>
           </div>
         </div>
 
         <div className='sec-brand'>
-          <h2 className='brand-heading'>Explore by Brand</h2>
+          <h2 className='heading'>Explore by Brand</h2>
           <section>
             <div className='carousel-brand'>
               <div className='next-prev'>
@@ -95,7 +89,7 @@ export const LandingPage = () => {
              {
                 images.map((i) => {
                   return (
-                    <div className='container-brand'>
+                    <div className='container-brand' key={i.id}>
                       <img src={i.url} alt="" />
                     </div>
                   )
@@ -107,9 +101,11 @@ export const LandingPage = () => {
             </div>
           </section>
         </div>
+        </div>
+
+        
         <Footer></Footer>
 
       </div>
-    </>
   );
 }

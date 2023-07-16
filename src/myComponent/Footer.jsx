@@ -25,7 +25,7 @@ export const Footer = () => {
             <div className='foot-sec2' style={{ display: "flex" ,paddingBottom:'4%'}}>
                 <div className='usefullinks' style={{ width: "50%", marginLeft: "5%" }}>
                     <h3>Useful Links</h3>
-                    <div style={{ display: 'flex' }}>
+                    <div className='foot-links' style={{ display: 'flex' }}>
                         <div className='foot-link' >About Us</div>
                         <div className='foot-link'>Contact Us</div>
                         <div className='foot-link'>Terms and Conditions</div>
@@ -36,7 +36,7 @@ export const Footer = () => {
                 <div className='find-us' style={{ width: "50%", marginLeft: "5%" }}>
                     <h3>Find Us</h3>
                     <div>
-                        <div style={{display:'flex'}}>
+                        <div className='foot-links'style={{display:'flex'}}>
                             <div style={{marginRight:'5px'}}><ion-icon name="location-outline"></ion-icon></div>
                             <div style={{marginRight:'5px'}}>Maulana Azad National Institue of bhopal</div>
                             <div>Ph: 9876789872</div>

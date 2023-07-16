@@ -1,28 +1,18 @@
-/* .App {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-}
 
-.legend {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 10px;
-  margin-top: -40px;
-} */
 body{
   overflow-x: hidden;
 }
-
-
-
 .carousel .thumbs{
   display: none;
 }
 .move img{
  width: 1200px;
- height: 450px;
+ /* height: 500px; */
   
+}
+.main-body{
+  width: 95%;
+  margin: auto;
 }
 
 
@@ -68,8 +58,42 @@ a {
 }
 .nav-icon ion-icon{
   margin: 0px 17px;
-  font-size: 22px;
+  font-size: 19px;
   color: white;
+}
+
+/* humburger */
+.humburger-menu{
+  display: none ;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 500px;
+  background-color:rgb(89 125 146) ;
+  justify-content: center;
+  /* align-items: center; */
+}
+.humburger-menu li{
+  color: white;
+  list-style-type: none;
+  margin: 50% 0;
+  font-size:25px ;
+}
+.humburger-menu.activated{
+  display: flex;
+}
+body .humburger-menu.activated {
+  overflow-y: hidden;
+}
+.menu-icon{
+  display: none;
+  color: white;
+  font-size: 2rem;
+}
+.menu-icon-close{
+  display: none;
+  color: white;
+  font-size: 2rem;
 }
 
 /* aboutus */
@@ -77,105 +101,73 @@ a {
   width: 90%;
   margin: auto;
 }
-.about-heading{
-  margin: 8% 3% 4% 3%;
-}
 .about-box{
   display: flex;
   margin: 0 0 10% 3%;
 }
 .about-img img {
-  width: 500px;
+  width: 100%;
+  height: 100%;
   
 }
 .about-img  {
-  margin-right: 20px;
+  margin-right: 5%;
+  width: 50%;
+  height: 300px;
   
 }
 .about-text {
-  padding: 0 20px;
-  font-size: 18px;
+  width: 50%;
+  /* padding: 0 20px; */
+  font-size: 20px;
   
 }
 
-
-
-
-
-/* footer */
-footer{
-  background-color: rgb(0, 0, 0);
-  color: white;
-}
-.foot-sub1{
-  width: 50%;
-  margin-left: 5%;
-
-}
-.foot-sub1 h1{
-  width: 70%;
-  
-
-}
-.foot-sub1 .foot-mail input{
-width: 50%;
-height: 28px;
-}
-.foot-btn{
-width: 25%;
-padding: 7.5px;
-margin: 0 5px;
-cursor: pointer;
-}
-.foor-sub2{
-  width: 50%;
-  margin-left: 5%;
-
-}
-.foot-link{
-  margin-right: 20px;
-  text-decoration: underline;
-}
-.foor-sub2 h1{
-  width:70% !important;
-
-}
 
 
 /* category */
 .sec-category{
-  width: 90%;
+  width: 95%;
   margin: auto;
 }
-.cat-heading{
+.heading{
   margin: 5% 3% 5% 3%;
 }
 .cat-img{
   width: 200px;
   height: 200px;
   border-radius:50% ;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
 
 }
 .cat-img img{
   width: 100%;
   height: 100%;
   border-radius:50% ;
+  
 
 }
-.cat-items{
+.cat-box{
+  /* text-align: center; */
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+.cat-items{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
 }
 .cat-text{
   text-align: center;
     margin: 15px;
+    font-weight: bold;
+    font-size: 22px;
 
 }
 
-.social-media ion-icon{
-  font-size: 45px;
-  margin-right: 30px;
-}
+
 
 
 /* Brand */
@@ -183,15 +175,12 @@ cursor: pointer;
   width: 95%;
   margin: auto;
 }
-.brand-heading{
-  margin: 5% 3% 5% 3%;
-}
 .carousel-brand{
   position: relative;
 }
 .container-brand img{
- width: 375px;
- height: 245px;
+  width: 320px;
+  height: 208px;
  border-radius: 20px;
 }
 .container-brand {
@@ -236,7 +225,6 @@ cursor: pointer;
   flex-direction: column;
   width: 95%;
   margin: auto;
-  /* border: solid red; */
   
 }
 .search{
@@ -283,9 +271,18 @@ cursor: pointer;
   padding: 5px;
 }
 
+.wishlist-container{
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin: auto;
+  margin-top: 5% ;
+}
+
 /* accordation */
 .filter-name{
-  background-color: rgba(125, 124, 124, 0.42);
+  background-color: rgb(89 125 146 / 85%);
+  color: white;
   padding: 10px;
 }
 .filter-1{
@@ -331,9 +328,6 @@ width: 150px;
   margin: 0 8px;
 }
 .cart-checkout{
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
   width: 40%;
   padding: 10px 69px;
   border-left: solid 0.05px rgba(145, 144, 144, 0.283);
@@ -357,6 +351,15 @@ width: 150px;
   font-size: 15px;
   cursor: pointer;
 }
+
+.empty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
 /* signin / register */
 .form{
   display: flex;
@@ -410,6 +413,160 @@ width: 150px;
   border-radius: 4px;
 
 }
+
+
+/* footer */
+footer{
+  background-color: black;
+  color: white;
+}
+.foot-sub1{
+  width: 50%;
+  margin-left: 5%;
+
+}
+.foot-sub1 h1{
+  width: 70%;
+  
+
+}
+.foot-sub1 .foot-mail input{
+width: 50%;
+height: 28px;
+}
+.foot-btn{
+width: 25%;
+padding: 7.5px;
+margin: 0 5px;
+cursor: pointer;
+}
+.foor-sub2{
+  width: 50%;
+  margin-left: 5%;
+
+}
+.foot-link{
+  margin-right: 20px;
+  text-decoration: underline;
+}
+.foor-sub2 h1{
+  width:70% !important;
+
+}
+.social-media ion-icon{
+  font-size: 45px;
+  margin: 0 15px;
+}
+
+
+@media screen and (max-width:920px) {
+  .heading{
+    font-size: 20px;
+  }
+ .cat-img{
+  width: 130px;
+  height: 130px;
+} 
+.list li{
+  margin: 0 15px;
+}
+.nav-icon ion-icon {
+    margin: 0px 11px;
+    font-size: 17px;
+}
+.menu .list {
+  font-size: 13px;
+}
+.cat-text {
+  margin-top: 20px;
+  margin-bottom: 35px;
+  font-size: 18px;
+}
+.about-text {
+  font-size: 15px;
+}
+.about-img {
+  height: 250px;
+}
+}
+@media screen  and (max-width:710px) {
+  .menu,.nav-icon{
+    display: none;
+  }
+  .menu-icon{
+    display: block;
+  }
+  .cat-items{
+    /* display: grid; */
+    /* justify-content: space-evenly; */
+    grid-template-columns: repeat(2,1fr);
+  }
+  .cat-img {
+    width: 130px;
+    height: 130px;
+  }
+  .about-img {
+    height: 200px;
+}
+.cat-text {
+  font-size: 20px;
+}
+.foot-sec1 h1{
+  font-size: 20px;
+}
+/* .foot-btn {
+  padding: 3.5px;
+  font-size: 10px;
+}
+.foot-sub1 .foot-mail input {
+  height: 21px;
+  font-size: 10px;
+} */
+.foot-sub1{
+  display: none !important;
+
+}
+.foot-sec1{
+  justify-content: center;
+  text-align: center;
+}
+.foot-sec2{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.foot-links{
+  flex-direction: column;
+}
+.social-media ion-icon{
+  font-size: 35px;
+}
+.usefullinks,.find-us{
+
+  margin-left: 0px !important;
+}
+#logo{
+  width: 150px;
+}
+}
+@media screen  and (max-width:450px) {
+
+  .cat-img {
+    width: 100px;
+    height: 100px;
+  }
+  .about-img {
+    height: 130px;
+}
+.about-text {
+  font-size: 10px;
+}
+.cat-text {
+  font-size: 14px;
+}
+}
+
 
 
 

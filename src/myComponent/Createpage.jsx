@@ -10,7 +10,6 @@ export const Createpage = () => {
   const [password, setpassword] = useState('');
   const [checkpassword, setcheckpassword] = useState('');
   const [firstName, setfirstName] = useState('');
-  const [lastName, setlastName] = useState('');
   const navigate = useNavigate()
   const username=  JSON.parse(localStorage.getItem("name"))
   const useremail=  JSON.parse(localStorage.getItem("email"))
