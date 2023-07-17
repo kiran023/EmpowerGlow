@@ -63,7 +63,7 @@ function App() {
                     rating: e.rating
                 }];
                 setdata(updatedCartData);
-                alert("add to your"+" " +field)
+                alert("add to your"+ " " +field)
 
             })
             .catch((err) => {
