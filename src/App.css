@@ -11,8 +11,11 @@ body{
   
 }
 .main-body{
-  width: 95%;
+  width: 85%;
   margin: auto;
+}
+#small-images{
+  display: none !important;
 }
 
 
@@ -72,12 +75,19 @@ a {
   background-color:rgb(89 125 146) ;
   justify-content: center;
   /* align-items: center; */
+  
+
+ 
 }
 .humburger-menu li{
   color: white;
   list-style-type: none;
   margin: 50% 0;
-  font-size:25px ;
+  font-size:20px ;
+  width: 100%;
+}
+.humburger-menu ul{
+ margin-top: 70%;
 }
 .humburger-menu.activated{
   display: flex;
@@ -98,22 +108,23 @@ body .humburger-menu.activated {
 
 /* aboutus */
 .sec-aboutus{
-  width: 90%;
-  margin: auto;
+  margin-bottom: 10%;
 }
 .about-box{
   display: flex;
-  margin: 0 0 10% 3%;
 }
 .about-img img {
   width: 100%;
   height: 100%;
+  border-radius: 5px;
   
 }
 .about-img  {
   margin-right: 5%;
+  margin-bottom: 20px;
   width: 50%;
   height: 300px;
+  
   
 }
 .about-text {
@@ -131,7 +142,7 @@ body .humburger-menu.activated {
   margin: auto;
 }
 .heading{
-  margin: 5% 3% 5% 3%;
+  margin: 5% 0;
 }
 .cat-img{
   width: 200px;
@@ -171,10 +182,6 @@ body .humburger-menu.activated {
 
 
 /* Brand */
-.sec-brand{
-  width: 95%;
-  margin: auto;
-}
 .carousel-brand{
   position: relative;
 }
@@ -182,9 +189,6 @@ body .humburger-menu.activated {
   width: 320px;
   height: 208px;
  border-radius: 20px;
-}
-.container-brand {
-  margin-left: 20px ;
 }
 .all-container{
    overflow-x:hidden ;
@@ -228,7 +232,8 @@ body .humburger-menu.activated {
   
 }
 .search{
-  margin: 50px;
+  width: 100%;
+  margin: 50px 0;
   display: flex;
   justify-content: center;
 }
@@ -287,7 +292,6 @@ body .humburger-menu.activated {
 }
 .filter-1{
   width: 80%;
-  margin: 5px;
 }
 .filters-item{
   /* padding: 5px; */
@@ -309,11 +313,14 @@ body .humburger-menu.activated {
 
 }
 .cart-subsec{
-  display:flex;
   margin:30px;
   border:solid 0.05px rgba(145, 144, 144, 0.283);
   border-radius: 7px;
   padding:17px;
+}
+.cart-details{
+  display: flex;
+  /* flex-direction: column; */
 }
 .cart-img img{
 width: 150px;
@@ -364,20 +371,22 @@ width: 150px;
 .form{
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 80%;
+  /* align-items: center; */
   margin: auto;
   margin-top: 5%;
-  padding: 40px;
   border: solid 0.05px rgba(145, 144, 144, 0.283);
   border-radius: 7px;
 }
 .form-item{
-  margin: 10px;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 5%;
 }
 .form-item h1{
   width: 100%;
   text-align: center;
-  margin-top: 0px;
+  margin-top: 5%;
 }
 .fill{
   margin: 10px 0;
@@ -390,7 +399,7 @@ width: 150px;
   border-radius: 4px;
 }
 .submit-btn{
-  width:45%;
+  width:150px;
   padding: 10px;
   margin: 6px 5px  10px 0;
   border-radius: 5px;
@@ -486,42 +495,55 @@ cursor: pointer;
   font-size: 15px;
 }
 .about-img {
-  height: 250px;
+  height: 230px;
+}
+.cart-details{
+  flex-direction: column;
 }
 }
 @media screen  and (max-width:710px) {
+  #big-images{
+    display: none !important;
+  }
+  #small-images{
+    display: block !important;
+  }
   .menu,.nav-icon{
     display: none;
   }
   .menu-icon{
     display: block;
   }
+  .about-box{
+    flex-direction: column;
+
+  }
+  .about-img , .about-text{
+    width: 100%;
+  }
+  .about-text{
+    font-size: 20px;
+
+  }
   .cat-items{
-    /* display: grid; */
-    /* justify-content: space-evenly; */
     grid-template-columns: repeat(2,1fr);
   }
   .cat-img {
     width: 130px;
     height: 130px;
   }
-  .about-img {
-    height: 200px;
-}
+ 
 .cat-text {
   font-size: 20px;
 }
+.product-container{
+  grid-template-columns: repeat(2,1fr);
+  width: 100%;
+}
+
 .foot-sec1 h1{
   font-size: 20px;
 }
-/* .foot-btn {
-  padding: 3.5px;
-  font-size: 10px;
-}
-.foot-sub1 .foot-mail input {
-  height: 21px;
-  font-size: 10px;
-} */
 .foot-sub1{
   display: none !important;
 
@@ -549,21 +571,51 @@ cursor: pointer;
 #logo{
   width: 150px;
 }
+
+.cart-body{
+  flex-direction: column;
+}
+.cart-products{
+  width: 100%;
+}
+.cart-checkout{
+  width: 100%;
+}
+.cart-checkout{
+  border: none;
+  padding: 0px;
+  width: 100%;
+
+}
+
+
 }
 @media screen  and (max-width:450px) {
-
+.products{
+  flex-direction: column;
+}
+.product-filter{
+  display: flex;
+      width: 100%;
+      align-items: center;
+      flex-direction: column;
+}
+  .about-img {
+    height: 200px;
+  }
   .cat-img {
     width: 100px;
     height: 100px;
   }
-  .about-img {
-    height: 130px;
-}
+ 
 .about-text {
-  font-size: 10px;
+  font-size: 15px;
 }
 .cat-text {
   font-size: 14px;
+}
+.humburger-menu li{
+  font-size: 18px;
 }
 }
 

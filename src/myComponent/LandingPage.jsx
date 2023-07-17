@@ -7,6 +7,7 @@ import { Footer } from './Footer'
 import { Bycategory } from './Bycategory';
 
 export const LandingPage = () => {
+ 
   const images=[
     {
       id:1,
@@ -33,7 +34,19 @@ export const LandingPage = () => {
       url:"https://cdn.shopify.com/s/files/1/1375/4957/files/freedom_L_banner_970x300.jpg?v=1598024747"
 
     }
+  ]
 
+  const alterImage=[
+    {
+      id: 1,
+      url: "https://www.peesafe.com/cdn/shop/files/1600X1200_13_600x.jpg?v=1688540520"
+
+    },
+    {
+      id: 2,
+     url: "https://www.peesafe.com/cdn/shop/files/TSS_Mobile_4_600x.jpg?v=1666852562"
+
+    }
   ]
   
 
@@ -52,18 +65,25 @@ export const LandingPage = () => {
       <div>
         <Navbar></Navbar>
         
-        <div className="App">
-          <Carousel className='move'>
+        <div className="App" id="big-images">
+          <Carousel className='move' >
             {landingImage.map((e) => {
-              return <div key={e.id}><img src={e.url} alt=""  /></div>
+              return <div key={e.id}><img src={e.url} alt=""/></div>
             })
             }
-
           </Carousel>
         </div>
+        <div className="App" id="small-images">
+          <Carousel className='move'>
+            {alterImage.map((e) => {
+              return <div key={e.id}><img src={e.url} alt=""/></div>
+            })
+            }
+          </Carousel>
+        </div>
+
         <div className='main-body'>
         <Bycategory></Bycategory>
-
         <div className='sec-aboutus'>
           <h2 className='heading'>Our Story</h2>
           <div className='about-box'>
@@ -71,8 +91,8 @@ export const LandingPage = () => {
               <img src="https://cdn.shopify.com/s/files/1/0055/7855/5503/files/Journey_banner-01_copy_-_Copy_2048x.jpg?v=1648016934" alt="" />
             </div>
             <div className='about-text'>
-              <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam at cumque iure tempora dolores soluta alias voluptas necessitatibus quis esse id molestias, maxime facere quam suscipit totam</div>
-              <div style={{ textDecoration: " underline", cursor: "pointer" }} >know more...</div>
+              <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam at cumque iure tempora dolores soluta alias voluptas necessitatibus quis esse id molestias, maxime facere quam suscipit totam Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, dolores soluta! Reprehenderit voluptates quod hic.</div>
+              <div style={{ textDecoration: "underline", cursor: "pointer" }} >know more...</div>
             </div>
           </div>
         </div>
@@ -102,8 +122,6 @@ export const LandingPage = () => {
           </section>
         </div>
         </div>
-
-        
         <Footer></Footer>
 
       </div>

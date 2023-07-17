@@ -43,7 +43,7 @@ export const Productpage = (props) => {
         {
             id:32,
             name:'price',
-            type:['Accending','decending']
+            type:['Accending','Decending']
         }
     ]
     
@@ -118,7 +118,7 @@ export const Productpage = (props) => {
                 </div>
                 <div className='products'>
                     <div className='product-filter'>
-                        <div>
+                    
                             {accordion.map((e) => {
                                 const [active, setactive] = useState(false);
                                 return (
@@ -135,7 +135,6 @@ export const Productpage = (props) => {
                                 )
 
                             })}
-                        </div>
                     </div>
                     <div className='product-container'>
                         {

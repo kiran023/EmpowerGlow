@@ -28,7 +28,7 @@ export const Navbar = ({ props }) => {
         <div onClick={humClose} className='menu-icon-close'><ion-icon name="close-outline"></ion-icon></div>
         <div className='menu'>
           <ul className='list'>
-            <Link to='/allProducts'><li>Product</li></Link>
+            <Link to='/allProducts'><li>Products</li></Link>
             <li>Brand</li>
             <li>Bestseller</li>
             <li>Blog</li>
@@ -44,10 +44,10 @@ export const Navbar = ({ props }) => {
       <div className='humburger-menu'>
         <div >
           <ul>
-            <Link to='/allProducts'><li>Product</li></Link>
-            <li>Brand</li>
-            <li>Bestseller</li>
-            <li>Blog</li>
+            <Link to='/allProducts'><li>Products</li></Link>
+            <Link to='/wishlist'><li>Wishlist</li></Link>
+            <Link to='/cart'><li>Cart</li></Link>
+            <Link to='/register'><li>Account</li></Link>
           </ul>
         </div>
 

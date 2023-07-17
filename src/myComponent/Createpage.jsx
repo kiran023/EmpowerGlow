@@ -88,7 +88,7 @@ export const Createpage = () => {
       <div>
         <Navbar></Navbar>
         <div className='form'>
-          <h2>hello!!! {username} </h2>
+          <h2>Hello!!! {username} </h2>
           <h3>Email: {useremail}</h3>
         
         <div>

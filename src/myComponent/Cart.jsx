@@ -118,7 +118,10 @@ export const Cart = () => {
             {
               cartdata.map((e) => {
                 return (
+
                   <div className='cart-subsec' key={e.product_id}>
+                    <div onClick={() => { deleteData(e) }} style={{ cursor: 'pointer' ,textAlign:'right' }}><ion-icon name="close-outline"></ion-icon></div>
+                  <div className='cart-details'>
                     <div className='cart-img'><img src={e.img} alt="" /></div>
                     <div className='cart-content' style={{ display: 'flex', flexDirection: 'column' }}>
                       <div className='cart-info' style={{ display: 'flex', justifyContent: "space-between" }}>
@@ -134,8 +137,9 @@ export const Cart = () => {
                         </div>
                       </div>
                     </div>
-                    <div onClick={() => { deleteData(e) }} style={{ cursor: 'pointer' }}><ion-icon name="close-outline"></ion-icon></div>
                   </div>
+                  </div>
+                  
                 )
               })
             }

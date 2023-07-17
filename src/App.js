@@ -63,7 +63,7 @@ function App() {
                     rating: e.rating
                 }];
                 setdata(updatedCartData);
-                alert("add to your"+field)
+                alert("add to your"+" " +field)
 
             })
             .catch((err) => {
@@ -71,7 +71,7 @@ function App() {
             });
 
     }
-    else alert("Already present in your" + field)
+    else alert("Already present in your " + field)
 
 }
 
