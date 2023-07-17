@@ -23,7 +23,7 @@ export const Navbar = ({ props }) => {
   return (
     <>
       <nav className='navbar' >
-        <Link to='/'><div className='nav-img'> <img src={logo} id='logo' alt=''/></div></Link>
+        <Link to='/'><div className='nav-img' onClick={humClose}> <img src={logo} id='logo' alt=''/></div></Link>
         <div onClick={humOpen} className='menu-icon'> <ion-icon name="menu-outline"></ion-icon></div>
         <div onClick={humClose} className='menu-icon-close'><ion-icon name="close-outline"></ion-icon></div>
         <div className='menu'>
@@ -44,10 +44,10 @@ export const Navbar = ({ props }) => {
       <div className='humburger-menu'>
         <div >
           <ul>
-            <Link to='/allProducts'><li>Products</li></Link>
-            <Link to='/wishlist'><li>Wishlist</li></Link>
-            <Link to='/cart'><li>Cart</li></Link>
-            <Link to='/register'><li>Account</li></Link>
+            <Link to='/allProducts'><li onClick={humClose}>Products</li></Link>
+            <Link to='/wishlist'><li onClick={humClose}>Wishlist</li></Link>
+            <Link to='/cart'><li onClick={humClose}>Cart</li></Link>
+            <Link to='/register'><li onClick={humClose}>Account</li></Link>
           </ul>
         </div>
 
