@@ -190,6 +190,9 @@ body .humburger-menu.activated {
   height: 208px;
  border-radius: 20px;
 }
+.container-brand {
+margin-right: 20px;
+}
 .all-container{
    overflow-x:hidden ;
    scroll-behavior: smooth;

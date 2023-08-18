@@ -23,7 +23,7 @@
     },
     {
         "id":"3",
-        "img":"https://cdn.shopify.com/s/files/1/0055/7855/5503/products/ExtraSmallPrimary2_300x.png?v=1681293099",
+        "img":"https://files.thesirona.com/site-images/800x800/rash-free-sanitary-pads-xl-30-2.jpg",
         "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name":"Extra large pads Whisper",
         "productBrand":"Whisper",
@@ -49,7 +49,7 @@
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name": "cotton Tampons Sirona",
         "productBrand": "Sirona",
-        "category": "Tampons",
+        "Category": "Tampons",
         "price": 450,
         "rating": 4.6
       },
@@ -59,7 +59,7 @@
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name": "Antibacteria Panty Liners",
         "productBrand": "Peesafe",
-        "category": "Panty-Liners",
+        "Category": "Panty-Liners",
         "price": 100,
         "rating": 4.0
       },
@@ -69,7 +69,7 @@
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name": "Sirona Menstrual cup",
         "productBrand": "Sirona",
-        "category": "Menstrual Cup",
+        "Category": "Menstrual Cup",
         "price": 350,
         "rating": 4.7
       },
@@ -79,7 +79,7 @@
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name": "Pads for nights",
         "productBrand": "Stayfree",
-        "category": "Pads",
+        "Category": "Pads",
         "price": 190,
         "rating": 4.4
       },
@@ -89,7 +89,7 @@
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name": "Antibacteria Tampons Peesafe",
         "productBrand": "Peesafe",
-        "category": "Tampons",
+        "Category": "Tampons",
         "price": 220,
         "rating": 4.9
       },
@@ -154,7 +154,7 @@
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name": "cotton Tampons Sirona",
         "productBrand": "Sirona",
-        "category": "Tampons",
+        "Category": "Tampons",
         "price": 450,
         "rating": 4.6
       },
@@ -164,7 +164,7 @@
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name": "Antibacteria Panty Liners",
         "productBrand": "Peesafe",
-        "category": "Panty Liners",
+        "Category": "Panty Liners",
         "price": 100,
         "rating": 4.0
       },
@@ -174,7 +174,7 @@
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name": "Sirona Menstrual cup",
         "productBrand": "Sirona",
-        "category": "Menstrual Cup",
+        "Category": "Menstrual Cup",
         "price": 350,
         "rating": 4.7
       },
@@ -184,7 +184,7 @@
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "name": "Pads for nights",
         "productBrand": "stayfree",
-        "category": "Pads",
+        "Category": "Pads",
         "price": 190,
         "rating": 4.4
       },
@@ -192,9 +192,9 @@
         "id": "19",
         "img": "https://cdn.shopify.com/s/files/1/0055/7855/5503/products/Primary_300x.jpg?v=1672038980",
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "name": "Antibacteria Tampons Peesafe",
+        "name": "Antibacterial Tampons Peesafe",
         "productBrand": "Peesafe",
-        "category": "Tampons",
+        "Category": "Tampons",
         "price": 220,
         "rating": 4.9
       }

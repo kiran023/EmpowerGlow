@@ -2,32 +2,13 @@ import React, { useState} from 'react'
 import Products from './products.json'
 import { Navbar } from './navbar'
 import { Footer } from './Footer'
-// import { database, } from '../firebase'
-// import {collection, getDocs } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
 
 export const Productpage = (props) => {
     const navigate = useNavigate()
     const localvariable = JSON.parse(localStorage.getItem("email"))
-    // const [data, setdata] = useState([])
     const [products, setproducts] = useState(Products)
-    // var collectionRef;
-    // if (localvariable !== null) {
-    //     collectionRef = collection(database, localvariable)
-    //     useEffect(() => {
-    //         async function fetchdata() {
-    //             const info = await getDocs(collectionRef)
-    //             const arr = info.docs.map((e) => {
-    //                 return {
-    //                     ...e.data(), id: e.id
-    //                 }
-    //             })
-    //             setdata(arr)
-    //         }
-    //         fetchdata()
-    //     }, [])
-    // }
 
     const accordion = [
         {
@@ -67,6 +48,7 @@ export const Productpage = (props) => {
                     return e.Category === i;
                 }
                 else return i === e.productBrand;
+
             })
             setproducts(filtered)
         }
@@ -94,13 +76,11 @@ export const Productpage = (props) => {
 
     }
     const check = (e, type) => {
+
         if (localvariable === null) {
                 navigate('/register')
         }
         else {
-            if(type==="wishlist"){
-
-            }
             props.addTo(e, type)
 
         }

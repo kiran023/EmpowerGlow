@@ -1,29 +1,28 @@
 import './App.css';
 import React,{useEffect,useState} from 'react'
-import { LandingPage } from './myComponent/LandingPage';
 import { database } from './firebase';
 import { collection, getDocs,addDoc,deleteDoc,doc} from 'firebase/firestore';
-// import { useNavigate } from 'react-router-dom';
 import { BrowserRouter as Router,Route,Routes} from 'react-router-dom';
+import { LandingPage } from './myComponent/LandingPage';
 import { Signinpage } from './myComponent/Signinpage';
 import { Createpage } from './myComponent/Createpage';
 import { Productpage } from './myComponent/Productpage';
 import { Wishlist } from './myComponent/Wishlist';
 import { Cart } from './myComponent/Cart';
-import { Search } from './myComponent/Search';
 
 function App() {
   const [data, setdata] = useState([])
   const localvariable = JSON.parse(localStorage.getItem("email"))
   var collectionRef;
   if (localvariable != null) {
-      collectionRef = collection(database, localvariable)
+     collectionRef = collection(database, localvariable)
       useEffect(() => {
           async function fetchdata() {
               const info = await getDocs(collectionRef)
               const arr = info.docs.map((e) => {
                   return {
-                      ...e.data(), id: e.id
+                    
+                       ...e.data(), id: e.id
                   }
               })
               setdata(arr)
@@ -32,7 +31,6 @@ function App() {
       }, [])
   }
   const addTo = (e, field) => {
-
     let filterData = data.filter((eve) => {
         return ((eve.product_id === e.id) && (eve.type === field))
     })
@@ -83,7 +81,6 @@ const deleteData=(e)=>{
     const newwishlist = data.filter((event) => {
       return event.id!==e.id
     })
-    // console.log(newwishlist)
     setdata(newwishlist)
   
  })
@@ -103,11 +100,8 @@ const deleteData=(e)=>{
       <Route path='/allProducts' Component={()=><Productpage addTo={addTo}/>}/>
       <Route path='/wishlist' Component={()=> <Wishlist data={data} addTo={addTo} deleteData={deleteData}/>}/>
       <Route path='/cart' Component={Cart}/>
-      <Route path='/search' Component={Search}/>
       </Routes>
     </Router>
-    
-    
     </div>
   );
 }
