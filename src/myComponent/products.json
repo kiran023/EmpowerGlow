@@ -187,15 +187,5 @@
         "Category": "Pads",
         "price": 190,
         "rating": 4.4
-      },
-      {
-        "id": "19",
-        "img": "https://cdn.shopify.com/s/files/1/0055/7855/5503/products/Primary_300x.jpg?v=1672038980",
-        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "name": "Antibacterial Tampons Peesafe",
-        "productBrand": "Peesafe",
-        "Category": "Tampons",
-        "price": 220,
-        "rating": 4.9
       }
 ]
