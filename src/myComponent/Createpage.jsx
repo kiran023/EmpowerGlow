@@ -88,6 +88,8 @@ export const Createpage = () => {
       <div>
         <Navbar></Navbar>
         <div className='form'>
+          <div className="form-item">
+
           <h2>Hello!!! {username} </h2>
           <h3>Email: {useremail}</h3>
         
@@ -96,6 +98,7 @@ export const Createpage = () => {
           <Link to='/cart' ><button className='btn'>Go to your cart</button></Link>
         </div>
         <button onClick={logout} className='submit-btn'> Log out</button>
+        </div>
         </div>
         
         <Footer></Footer>

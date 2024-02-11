@@ -99,7 +99,8 @@ export const Productpage = (props) => {
                 <div className='products'>
                     <div className='product-filter'>
                     
-                            {accordion.map((e) => {
+                            {
+                            accordion.map((e) => {
                                 const [active, setactive] = useState(false);
                                 return (
                                     <div className='filter-1' key={e.id}>
@@ -114,7 +115,8 @@ export const Productpage = (props) => {
                                     </div>
                                 )
 
-                            })}
+                            })
+                            }
                     </div>
                     <div className='product-container'>
                         {
