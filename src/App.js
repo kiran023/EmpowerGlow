@@ -11,29 +11,37 @@ import { Wishlist } from './myComponent/Wishlist';
 import { Cart } from './myComponent/Cart';
 
 function App() {
-  const [data, setdata] = useState([])
-  const localvariable = JSON.parse(localStorage.getItem("email"))
-  var collectionRef;
-  if (localvariable != null) {
-     collectionRef = collection(database, localvariable)
+  const [data, setdata] = useState([]);
+  const localvariable = JSON.parse(localStorage.getItem("email"));
+  const [collectionRef, setCollectionRef] = useState(null);
       useEffect(() => {
+        if (localvariable != null) {
+          const ref=collection(database, localvariable);
+        setCollectionRef (ref);
+        console.log(collectionRef)
           async function fetchdata() {
-              const info = await getDocs(collectionRef)
+              const info = await getDocs(ref)
               const arr = info.docs.map((e) => {
                   return {
                     
                        ...e.data(), id: e.id
                   }
               })
-              setdata(arr)
+
+              setdata(arr);
           }
-          fetchdata()
-      }, [])
-  }
+          fetchdata();
+        }
+      }, [localvariable]);
+    
+  
   const addTo = (e, field) => {
+    console.log(data);
     let filterData = data.filter((eve) => {
         return ((eve.product_id === e.id) && (eve.type === field))
     })
+    // collectionRef = collection(database, localvariable);
+    console.log(collectionRef);
     if (filterData.length === 0) {
         addDoc(collectionRef, {
             type: field,
@@ -99,7 +107,7 @@ const deleteData=(e)=>{
       <Route path='/signin' Component={Signinpage}/>
       <Route path='/allProducts' Component={()=><Productpage addTo={addTo}/>}/>
       <Route path='/wishlist' Component={()=> <Wishlist data={data} addTo={addTo} deleteData={deleteData}/>}/>
-      <Route path='/cart' Component={Cart}/>
+      <Route path='/cart' Component={()=><Cart data={data}/>}/>
       </Routes>
     </Router>
     </div>

@@ -9,18 +9,20 @@ export const Wishlist = (props) => {
   const navigate = useNavigate()
   const localvariable = JSON.parse(localStorage.getItem("email"))
   const [wishlist, setwishlist] = useState([])
-  if (localvariable === null) {
+  useEffect(()=>{
 
-    navigate('/register')
+    if (localvariable === null) {
 
-  }
-  else {
-    useEffect(() => {
-      const filteredData = props.data.filter((e) => e.type === "wishlist");
-      setwishlist(filteredData);
-    }, []);
-
-  }
+      navigate('/register')
+  
+    }
+    else {
+        const filteredData = props.data.filter((e) => e.type === "wishlist");
+        setwishlist(filteredData);
+    }
+    
+  },[]);
+  
 
 
 

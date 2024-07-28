@@ -5,29 +5,19 @@ import { database } from '../firebase';
 import { collection, getDocs, deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
-export const Cart = () => {
-  const [cartdata, setcartdata] = useState([])
+export const Cart = (props) => {
+  const [cartdata, setcartdata] = useState(props.data)
   const [price, setprice] = useState(0)
   const navigate = useNavigate()
   const localvariable = JSON.parse(localStorage.getItem("email"))
   console.log(localvariable)
-  if (localvariable === null) {
-    useEffect(() => {
+  useEffect(()=>{
+    if (localvariable === null) {
       navigate('/register')
-    }, [])
   }
   else {
-    const collectionRef = collection(database, localvariable)
-    useEffect(() => {
-      async function fetchdata() {
-        const info = await getDocs(collectionRef)
-        const arr = info.docs.map((e) => {
-          return {
-            ...e.data(), id: e.id
-          }
-        })
         var p = 0
-        const filtereddata = arr.filter((e) => {
+        const filtereddata = cartdata.filter((e) => {
 
           if (e.type === "cart")
 
@@ -37,12 +27,10 @@ export const Cart = () => {
         setcartdata(filtereddata)
         setprice(p)
 
-      }
-      fetchdata()
-
-    }, [])
-
   }
+
+  },[]);
+  
 
   const deleteData = (e) => {
     setprice(price - parseInt(e.price))

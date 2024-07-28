@@ -81,11 +81,13 @@ export const Productpage = (props) => {
                 navigate('/register')
         }
         else {
+            console.log(e);
             props.addTo(e, type)
 
         }
 
     }
+    const [active, setactive] = useState(false);
 
 
 
@@ -101,7 +103,7 @@ export const Productpage = (props) => {
                     
                             {
                             accordion.map((e) => {
-                                const [active, setactive] = useState(false);
+                                
                                 return (
                                     <div className='filter-1' key={e.id}>
                                         <div className='filter-name' onClick={() => { setactive(!active) }} style={{ cursor: 'pointer' }}>{e.name}</div>
